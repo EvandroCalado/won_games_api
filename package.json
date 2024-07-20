@@ -11,6 +11,7 @@
     "build": "strapi build",
     "deploy": "strapi deploy",
     "develop": "strapi develop",
+    "postinstall": "patch-package",
     "start": "strapi start",
     "strapi": "strapi"
   },
@@ -22,10 +23,14 @@
     "@strapi/plugin-users-permissions": "4.25.4",
     "@strapi/provider-upload-cloudinary": "^4.25.4",
     "@strapi/strapi": "4.25.4",
+    "jsdom": "^24.1.0",
+    "patch-package": "^8.0.0",
     "pg": "8.8.0",
+    "postinstall-postinstall": "^2.1.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
+    "slugify": "^1.6.6",
     "strapi-content-type-explorer": "^0.2.2",
     "styled-components": "5.3.3"
   },

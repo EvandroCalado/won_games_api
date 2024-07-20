@@ -47,11 +47,11 @@ export default {
     },
     // Extend the translations
     translations: {
-      "pt-BR": {
+      en: {
         "app.components.LeftMenu.navbrand.title": "Won Games",
-        "app.components.LeftMenu.navbrand.workplace": "Painel Administrativo",
-        "Auth.form.welcome.title": "Bom Vindo a Won Games",
-        "Auth.form.welcome.subtitle": "Entrar com sua conta",
+        "app.components.LeftMenu.navbrand.workplace": "Dashboard",
+        "Auth.form.welcome.title": "Welcome to Won Games!",
+        "Auth.form.welcome.subtitle": "Log in to your account",
       },
     },
     // Disable video tutorials

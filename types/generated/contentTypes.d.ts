@@ -794,9 +794,10 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     singularName: 'category';
     pluralName: 'categories';
     displayName: 'category';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
@@ -808,7 +809,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::category.category',
       'oneToOne',
@@ -830,9 +830,10 @@ export interface ApiDeveloperDeveloper extends Schema.CollectionType {
     singularName: 'developer';
     pluralName: 'developers';
     displayName: 'developer';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
@@ -845,7 +846,6 @@ export interface ApiDeveloperDeveloper extends Schema.CollectionType {
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::developer.developer',
       'oneToOne',
@@ -875,11 +875,7 @@ export interface ApiGameGame extends Schema.CollectionType {
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
     slug: Attribute.UID<'api::game.game', 'name'> & Attribute.Required;
-    short_description: Attribute.Text &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    short_description: Attribute.Text & Attribute.Required;
     description: Attribute.RichText &
       Attribute.Required &
       Attribute.CustomField<
@@ -892,7 +888,7 @@ export interface ApiGameGame extends Schema.CollectionType {
     price: Attribute.Decimal & Attribute.Required & Attribute.DefaultTo<0>;
     release_date: Attribute.Date;
     rating: Attribute.Enumeration<
-      ['free', 'pegi3', 'pegi7', 'pegi12', 'pegi16', 'pegi18']
+      ['BR0', 'BR10', 'BR12', 'BR14', 'BR16', 'BR18']
     > &
       Attribute.Required;
     cover: Attribute.Media<'images'>;
@@ -933,9 +929,10 @@ export interface ApiPlatformPlatform extends Schema.CollectionType {
     singularName: 'platform';
     pluralName: 'platforms';
     displayName: 'platform';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
@@ -947,7 +944,6 @@ export interface ApiPlatformPlatform extends Schema.CollectionType {
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::platform.platform',
       'oneToOne',
@@ -969,9 +965,10 @@ export interface ApiPublisherPublisher extends Schema.CollectionType {
     singularName: 'publisher';
     pluralName: 'publishers';
     displayName: 'publisher';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
@@ -984,7 +981,6 @@ export interface ApiPublisherPublisher extends Schema.CollectionType {
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::publisher.publisher',
       'oneToOne',
